@@ -2,16 +2,16 @@ import { useChat } from "@/contexts/ChatContext";
 import { KeyboardEvent, useState } from "react";
 
 type Props = {
-        name: string;
-    }
+    name: string;
+}
 
-export const ChatInput = ({name} : Props) => {
+export const ChatInput = ({ name }: Props) => {
     const chatCtx = useChat();
     const [textInput, setTextInput] = useState('')
 
     const handleKeyUpAction = (event: KeyboardEvent<HTMLInputElement>) => {
-        if(event.code.toLowerCase() === 'enter' || event.code.toLowerCase() === 'numpadenter'){
-            if(textInput.trim() !== ''){
+        if (event.key === 'Enter') {
+            if (textInput.trim() !== '') {
                 chatCtx?.addMessage(name, textInput.trim());
                 setTextInput('');
             }

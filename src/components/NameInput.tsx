@@ -6,8 +6,8 @@ export const NameInput = () => {
     const [nameInput, setNameInput] = useState('');
 
     const handleKeyUpAction = (event: KeyboardEvent<HTMLInputElement>) => {
-        if(event.code.toLowerCase() === 'enter' || event.code.toLowerCase() === 'numpadenter'){
-            if(nameInput.trim() !== '' && nameInput !== 'bot'){
+        if (event.key === 'Enter') {
+            if (nameInput.trim() !== '' && nameInput !== 'bot') {
                 userCtx?.setUser(nameInput.trim())
             }
         }
