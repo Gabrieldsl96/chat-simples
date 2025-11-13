@@ -11,13 +11,13 @@ export const Chat = () => {
 
     return (
         <div className="border border-white/30 rounded-md">
-            <div className="h-96 p-3 overflow-y-auto custom-scrollbar">
+            <div className="h-64 sm:h-80 md:h-96 p-2 sm:p-3 overflow-y-auto custom-scrollbar">
                 <ChatMessages />
             </div>
-            <div className="border-t border-t-white/30 p-3">
+            <div className="border-t border-t-white/30 p-2 sm:p-3">
                 <ChatInput name={userCtx.user} />
             </div>
-            <div className="border-t border-t-white/30 p-3">
+            <div className="border-t border-t-white/30 p-2 sm:p-3">
                 <ChatInput name={'bot'} />
             </div>
         </div>

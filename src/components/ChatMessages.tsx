@@ -12,8 +12,8 @@ export const ChatMessages = () => {
                 <div
                     key={item.id}
                     className={`border border-white/20 rounded-md p-2 text-sm 
-                        ${item.user === userCtx?.user ? 
-                            'self-end bg-white/10 text-right' : 
+                        ${item.user === userCtx?.user ?
+                            'self-end bg-white/10 text-right' :
                             'self-start bg-white/5 text-left'
                         }
                     `}
