@@ -9,8 +9,9 @@ export const ChatInput = ({ name }: Props) => {
     const chatCtx = useChat();
     const [textInput, setTextInput] = useState('')
 
-    const handleKeyUpAction = (event: KeyboardEvent<HTMLInputElement>) => {
+    const handleKeyDownAction = (event: KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
+            event.preventDefault();
             if (textInput.trim() !== '') {
                 chatCtx?.addMessage(name, textInput.trim());
                 setTextInput('');
@@ -24,7 +25,7 @@ export const ChatInput = ({ name }: Props) => {
             placeholder={`${name}, digite uma mensagem (e aperte enter)`}
             value={textInput}
             onChange={e => setTextInput(e.target.value)}
-            onKeyUp={handleKeyUpAction}
+            onKeyDown={handleKeyDownAction}
         />
     )
 }

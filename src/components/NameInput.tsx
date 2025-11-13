@@ -5,8 +5,9 @@ export const NameInput = () => {
     const userCtx = useUser();
     const [nameInput, setNameInput] = useState('');
 
-    const handleKeyUpAction = (event: KeyboardEvent<HTMLInputElement>) => {
+    const handleKeyDownAction = (event: KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
+            event.preventDefault();
             if (nameInput.trim() !== '' && nameInput !== 'bot') {
                 userCtx?.setUser(nameInput.trim())
             }
@@ -22,7 +23,7 @@ export const NameInput = () => {
                     className="flex-1 border border-white/30 rounded-md px-4 py-3 text-white bg-white/10 outline-none"
                     value={nameInput}
                     onChange={e => setNameInput(e.target.value)}
-                    onKeyUp={handleKeyUpAction}
+                    onKeyDown={handleKeyDownAction}
                 />
             </div>
         </div>
