@@ -2,7 +2,7 @@
 
 Uma aplicação web moderna de chat construída com Next.js, React e TypeScript. Este projeto permite que usuários enviem mensagens em um chat simples e interativo com interface responsiva.
 
-🔗 **[Acesse o site aqui](https://chat-simples-psi.vercel.app/)**
+🔗 **[Acesse o site aqui](https://chat-simples.gbcmtecnologia.com.br/)**
 
 ## ✨ Funcionalidades
 
